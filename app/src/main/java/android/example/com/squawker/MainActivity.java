@@ -38,6 +38,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private static String LOG_TAG = MainActivity.class.getSimpleName();
     private static final int LOADER_ID_MESSAGES = 0;
 
@@ -86,6 +87,12 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        // TODO: Do what said to do in video
+
+        Bundle bundleExtras = getIntent().getExtras();
+        if ((bundleExtras != null) && (bundleExtras.containsKey(getString(R.string.fcm_test_key)))) {
+            Log.d(TAG, "onCreate: Extra contains: " + bundleExtras.getString(getString(R.string.fcm_test_key)));
+        }
     }
 
     @Override
