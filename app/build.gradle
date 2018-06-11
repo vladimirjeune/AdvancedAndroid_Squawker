@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "android.example.com.squawker"
         minSdkVersion 16
@@ -39,6 +39,11 @@ dependencies {
 
     // Firebase dependency
     compile 'com.google.firebase:firebase-messaging:17.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+
+    // Getting a "Could not find" error? Make sure you have
+    // added the Google maven respository to your root build.gradle
+
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
 // folder. You download it from the Firebase console
