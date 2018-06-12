@@ -18,6 +18,7 @@ package android.example.com.squawker;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.example.com.squawker.fcm.SquawkerFirebaseInstanceIDService;
 import android.example.com.squawker.following.FollowingPreferenceActivity;
 import android.example.com.squawker.provider.SquawkContract;
 import android.example.com.squawker.provider.SquawkProvider;
@@ -102,7 +103,8 @@ public class MainActivity extends AppCompatActivity implements
         // TODO (3) Here, in MainActivity, get a token using FirebaseInstanceId.getInstance().getToken()
         // TODO (4) Get the message from that token and print it in a log statement
 
-
+        SquawkerFirebaseInstanceIDService idService = new SquawkerFirebaseInstanceIDService();
+        idService.onTokenRefresh();
     }
 
     @Override
